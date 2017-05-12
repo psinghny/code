@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="myApp.js"></script>
+<script src="myCtrl.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<input type="number" ng-model="side1" placeholder="Side 1"> &nbsp;&nbsp;
+<input type="number" ng-model="side2" placeholder="Side 2"> &nbsp;&nbsp;
+<input type="number" ng-model="side3" placeholder="Side 3"> &nbsp;&nbsp;
+<button ng-click="checktrangle()" >Calculate</button>
+<br><br>
+Result: {{ result }}
+
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Check trangle</title>
+<script>
+function calcutetrangle()
+{
+	var side1=Number(document.getElementById("side1").value);
+	var side2=Number(document.getElementById("side2").value);
+	var side3=Number(document.getElementById("side3").value);
+	
+	if(side1==0 || side2==0 || side3==0)
+	{
+	alert('Please enter all sides!');
+	return;
+	}
+	
+	if(((side1+side2) > side3 && (side1+side3) > side2 && (side3+side2)>side1))
+	{
+	  
+	  if(side1 == side2 &&  side2 == side3)
+	  document.getElementById("result").innerHTML='equilateral';
+	  else if((side1 == side2 ||  side2 == side3) && (side1 != side2 ||  side2 != side3) )
+	  document.getElementById("result").innerHTML='isosceles';
+	  else
+	  document.getElementById("result").innerHTML='scalene';
+	  
+	}
+	else
+	document.getElementById("result").innerHTML='not a triangle';
+	
+}
+
+</script>
+</head>
+
+<body>
+
+   
+    <label>
+        
+        <input type="text" name="side1" id="side1" placeholder="Side 1" />
+    </label>
+    <label>
+        
+        <input type="text" name="side2" id="side2" placeholder="Side 2" />
+    </label>
+    <label>
+        
+        <input type="text" name="side3" id="side3" placeholder="Side 3" />
+    </label>
+    
+     <label>
+        <span>&nbsp;</span> 
+        <input type="button" class="button" onclick="calcutetrangle()" value="Calculate" /> 
+    </label>    
+<br/><br/><br/>
+<div id="result"></div>
+
+</body>
+
+</html>
